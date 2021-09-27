@@ -2046,3 +2046,8 @@ body.modal{
 	.tokyo_tm_modalbox_about .box_inner{width: 300px;}
 	.tokyo_tm_modalbox .description_wrap{padding: 20px;}
 }
+
+#ijeoma {
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	filter: grayscale(100%);
+  }

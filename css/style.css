@@ -477,7 +477,7 @@ h6 { font-size: 16px; }
 }
 .tokyo_tm_home .social ul li a{
 	text-decoration: none;
-	color: #000;
+	color: #fff;
 	
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
@@ -486,7 +486,7 @@ h6 { font-size: 16px; }
 	        transition: all .3s ease;
 }
 .tokyo_tm_home .social ul li a:hover{
-	color: #000;
+	color:lightskyblue;
 }
 .tokyo_tm_home .social ul li .svg{
 	width: 17px;

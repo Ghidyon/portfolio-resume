@@ -1,4 +1,4 @@
-/*
+/* 
 This file is made by Marketify (2021)
 
 01) BASE
@@ -42,10 +42,11 @@ ul, ol{
 ul li, ol li{
 	margin:0px;
 }
-img{
+/* img{
 	vertical-align:middle;
 	max-width:100%;
-}
+} */ 
+/* img is a bug, removes modal close button */
 iframe{
 	max-width:100%;
 }
@@ -197,14 +198,14 @@ input[type="button"]{
 }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
+
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'xcon';
     src: url('../font/xcon.svg?4965248#xcon') format('svg');
   }
 }
-*/
+
  
  [class^="xcon-"]:before, [class*=" xcon-"]:before {
   font-family: "xcon";
@@ -400,7 +401,7 @@ input[type="button"]{
 .xcon-firefox:before { content: '\f269'; } /* '' */
 .xcon-opera:before { content: '\f26a'; } /* '' */
 .xcon-internet-explorer:before { content: '\f26b'; } /* '' */
-.xcon-vimeo:before { content: '\f27d'; } /* '' */
+.xcon-vimeo:before { content: '\f27d'; } ''
 
 
 /*------------------------------------------------------------------*/ 

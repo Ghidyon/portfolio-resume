@@ -20,13 +20,15 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="css/plugins.css" />
     <link rel="stylesheet" type="text/css" href="css/dark.css" />
     <link rel="stylesheet" type="text/css" href="css/colors.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    
   </head>
 
   <body class="dark">
@@ -649,12 +651,12 @@ My name is Ijeoma Okoh. A graduate of forestry and wildlife, now a tech professi
                   <div class="map" ><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126868.94990672052!2d7.468426035666616!3d6.438375264863979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1044a3cf887d1a25%3A0x9e342e82908e0c3d!2sEnugu!5e0!3m2!1sen!2sng!4v1634213435803!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
                 </div>
                 <div class="fields">
-                  <form
+                  <!-- <form
                     action="db.php"
-                    method="post"
                     class="contact_form"
                     id="contact_form"
                     autocomplete="off"
+                    method="post"
                   >
                     <div
                       class="returnmessage"
@@ -669,7 +671,7 @@ My name is Ijeoma Okoh. A graduate of forestry and wildlife, now a tech professi
                           <input id="name" type="text" placeholder="Name" />
                         </li>
                         <li>
-                          <input id="email" type="text" placeholder="Email" />
+                          <input id="email" type="email" placeholder="Email" />
                         </li>
                       </ul>
                     </div>
@@ -681,9 +683,28 @@ My name is Ijeoma Okoh. A graduate of forestry and wildlife, now a tech professi
                         <span>Send Message</span>
                       </a>
                     </div>
+                  </form> -->
 
-                    <!-- If you want to change mail address to yours, please open modal.php and go to line 4 -->
-                  </form>
+                  <form id="Ijeomaform"  enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="name" class="first">Full Name</label>
+                            <input type="text" class="first" id="name" name="name" placeholder="Full Name" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="first">Email</label>
+                            <input type="email" class="first" id="email" name="email" placeholder="name@example.com" />
+                        </div>
+                        <div class="">
+                            <label for="message" class="last">Message</label>
+                            <textarea type="text" class="last" id="message" name="message" placeholder="Type your message" rows="3"></textarea>
+                        </div>
+
+                        <div class="">
+                            <button type="submit" name="submit" class="btn btn-dark btn-outline-light">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
                 </div>
               </div>
             </div>
@@ -709,14 +730,49 @@ My name is Ijeoma Okoh. A graduate of forestry and wildlife, now a tech professi
     <!--[if lt IE 10]>
       <script type="text/javascript" src="js/ie8.js"></script>
     <![endif]-->
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+      $(document).ready(function() {
+
+          // File upload via Ajax
+
+          $("#Ijeomaform").on("submit", function(e) {
+
+              e.preventDefault();
+
+              $.ajax({
+
+                  type: "POST",
+
+                  url: "db.php",
+
+                  data: new FormData(this),
+
+                  contentType: false,
+
+                  cache: false,
+
+                  processData: false,
+
+                  success: function(result) {
+                      alert(result);
+                  }
+
+              });
+              $("#Ijeomaform")[0].reset();
+
+          });
+
+      });
+  </script>
+
     <script src="js/plugins.js"></script>
     <script src="js/init.js"></script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5bpEs3xlB8vhxNFErwoo3MXR64uavf6Y&callback=initMap"
-    ></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+
+    
     <!-- /SCRIPTS -->
   </body>
 </html>

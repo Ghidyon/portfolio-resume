@@ -553,6 +553,7 @@ h6 {
   width: 100%;
   height: auto;
   clear: both;
+  margin-bottom: 40px;
 }
 .tokyo_tm_about .description_inner {
   width: 100%;
@@ -605,10 +606,6 @@ h6 {
 .tokyo_tm_about .description .right > ul > li a:hover {
   color: #000;
   letter-spacing: 2px;
-}
-
-.tokyo_tm_button .resume {
-  padding-top: 40px;
 }
 
 .tokyo_tm_button {
@@ -900,6 +897,7 @@ h6 {
   font-family: "Montserrat";
   letter-spacing: 0px;
   margin-bottom: 11px;
+  border-radius: 5px;
 }
 .tokyo_tm_title .title_flex {
   width: 100%;

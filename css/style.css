@@ -969,6 +969,7 @@ h6 {
   float: left;
   overflow: hidden;
   position: relative;
+  border-radius: 15px;
 }
 .tokyo_tm_portfolio .portfolio_list li .inner img {
   opacity: 0;
@@ -1863,6 +1864,9 @@ h6 {
   }
   .tokyo_tm_home .details {
     margin-left: 0px;
+  }
+  .tokyo_tm_home .social {
+    padding-bottom: 50px;
   }
   .tokyo_tm_about .description_inner {
     flex-direction: column;

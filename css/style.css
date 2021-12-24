@@ -570,7 +570,7 @@ h6 {
 .tokyo_tm_about .description .name {
   font-weight: 700;
   font-size: 22px;
-  margin-bottom: 26px;
+  margin-bottom: 35px;
 }
 .tokyo_tm_about .description .right {
   width: 45%;
@@ -606,6 +606,11 @@ h6 {
   color: #000;
   letter-spacing: 2px;
 }
+
+.tokyo_tm_button .resume {
+  padding-top: 40px;
+}
+
 .tokyo_tm_button {
   width: 100%;
   height: auto;
@@ -738,7 +743,6 @@ h6 {
   height: auto;
   clear: both;
   float: left;
-  padding-top: 10px;
 }
 .progress_inner {
   width: 100%;

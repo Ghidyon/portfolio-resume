@@ -7,19 +7,19 @@ jQuery(document).ready(function () {
 	// here all ready functions
 
 	tokyo_tm_menu();
-	tokyo_tm_modalbox_news();
+	// tokyo_tm_modalbox_news();
 	// tokyo_tm_modalbox_about();
-	tokyo_tm_modalbox_portfolio();
+	// tokyo_tm_modalbox_portfolio();
 	tokyo_tm_my_progress();
 	tokyo_tm_mycounter();
 	tokyo_tm_projects();
 	tokyo_tm_portfolio();
 	tokyo_tm_cursor();
-	tokyo_tm_imgtosvg();
+	// tokyo_tm_imgtosvg();
 	tokyo_tm_popup();
 	tokyo_tm_data_images();
 	tokyo_tm_contact_form();
-	tokyo_tm_owl_carousel();
+	// tokyo_tm_owl_carousel();
 
 	jQuery(window).load('body', function () {
 		tokyo_tm_my_load();
@@ -55,45 +55,6 @@ function tokyo_tm_menu() {
 	});
 }
 
-// -------------------------------------------------
-// -------------  MODALBOX NEWS  -------------------
-// -------------------------------------------------
-
-function tokyo_tm_modalbox_news() {
-
-	"use strict";
-
-	var modalBox = jQuery('.tokyo_tm_modalbox');
-	var list = jQuery('.tokyo_tm_news ul li');
-	var closePopup = modalBox.find('.close');
-
-	list.each(function () {
-		var element = jQuery(this);
-		var details = element.find('.list_inner').html();
-		var buttons = element.find('.details .title a,.tokyo_tm_full_link,.tokyo_tm_read_more a');
-		var mainImage = element.find('.main');
-		var imgData = mainImage.data('img-url');
-		var title = element.find('.title');
-		var titleHref = element.find('.title a').html();
-		buttons.on('click', function () {
-			jQuery('body').addClass('modal');
-			modalBox.addClass('opened');
-			modalBox.find('.description_wrap').html(details);
-			mainImage = modalBox.find('.main');
-			mainImage.css({ backgroundImage: 'url(' + imgData + ')' });
-			title = modalBox.find('.title');
-			title.html(titleHref);
-			tokyo_tm_imgtosvg();
-			return false;
-		});
-	});
-	closePopup.on('click', function () {
-		modalBox.removeClass('opened');
-		modalBox.find('.description_wrap').html('');
-		jQuery('body').removeClass('modal');
-		return false;
-	});
-}
 
 // -------------------------------------------------
 // -------------  MODALBOX ABOUT  ------------------
@@ -123,7 +84,7 @@ function tokyo_tm_modalbox_news() {
 // -------------  MODALBOX PORTFOLIO  --------------
 // -------------------------------------------------
 
-function tokyo_tm_modalbox_portfolio() {
+/* function tokyo_tm_modalbox_portfolio() {
 
 	"use strict";
 
@@ -144,7 +105,7 @@ function tokyo_tm_modalbox_portfolio() {
 		tokyo_tm_popup();
 	});
 }
-
+ */
 // -------------------------------------------------
 // -----------------    PORTFOLIO    ---------------
 // -------------------------------------------------
@@ -329,7 +290,7 @@ function tokyo_tm_cursor() {
 // -----------------------------------------------------
 // ---------------    IMAGE TO SVG    ------------------
 // -----------------------------------------------------
-
+/* 
 function tokyo_tm_imgtosvg() {
 
 	"use strict";
@@ -358,7 +319,7 @@ function tokyo_tm_imgtosvg() {
 		}, 'xml');
 
 	});
-}
+} */
 
 // -----------------------------------------------------
 // --------------------   POPUP    ---------------------
@@ -380,7 +341,7 @@ function tokyo_tm_popup() {
 		});
 
 	});
-	jQuery('.popup-youtube, .popup-vimeo').each(function () { // the containers for all your galleries
+	/* jQuery('.popup-youtube, .popup-vimeo').each(function () { // the containers for all your galleries
 		jQuery(this).magnificPopup({
 			disableOn: 700,
 			type: 'iframe',
@@ -396,7 +357,7 @@ function tokyo_tm_popup() {
 		gallery: {
 			enabled: true,
 		},
-	});
+	}); */
 }
 
 // -----------------------------------------------------
@@ -460,44 +421,4 @@ function tokyo_tm_contact_form() {
 		}
 		return false;
 	});
-}
-
-// -----------------------------------------------------
-// ----------------    OWL CAROUSEL    -----------------
-// -----------------------------------------------------
-
-function tokyo_tm_owl_carousel() {
-
-	"use strict";
-
-	var carousel = jQuery('.partners .owl-carousel');
-
-	var rtlMode = false;
-
-	if (jQuery('body').hasClass('rtl')) {
-		rtlMode = 'true';
-	}
-
-	carousel.owlCarousel({
-		loop: true,
-		items: 4,
-		lazyLoad: false,
-		margin: 50,
-		autoplay: true,
-		autoplayTimeout: 7000,
-		rtl: rtlMode,
-		dots: true,
-		nav: false,
-		navSpeed: true,
-		responsive: {
-			0: { items: 1 },
-			480: { items: 2 },
-			768: { items: 3 },
-			1040: { items: 3 },
-			1200: { items: 3 },
-			1600: { items: 4 },
-			1920: { items: 4 }
-		}
-	});
-	tokyo_tm_imgtosvg();
 }

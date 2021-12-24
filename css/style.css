@@ -271,7 +271,7 @@ h6 {
   padding: 20px 40px;
 }
 .tokyo_tm_mobile_menu .logo img {
-  max-width: 100px;
+  max-width: 25px;
 }
 .tokyo_tm_mobile_menu .menu ul {
   margin: 0px;
@@ -1736,6 +1736,17 @@ body.modal {
   float: left;
   padding: 100px 0px 100px 0px;
 }
+.tokyo_tm_contact .mail_header {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+.tokyo_tm_contact .mail_header li a {
+  color: #fff;
+  margin-left: 20px;
+  font-size: 30px;
+}
+
 .tokyo_tm_contact .map_wrap {
   width: 100%;
   height: auto;
